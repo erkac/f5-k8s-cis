@@ -1,8 +1,10 @@
-# F5 with K8n Demo
+# F5 with K8s Demo
 
 Based on the UDF Demo -> ASE CC K8s Exercise
 
-K8n Master
+
+## Gernal Notes
+K8s Master
 
         systemctl status kubelet
 
