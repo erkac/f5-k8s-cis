@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: exercise2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: exercise2
+  template:
+    metadata:
+      labels:
+        app: exercise2
+    spec:
+      containers:
+      - name: exercise2
+        image: f5devcentral/f5-demo-app
+        ports:
+        - containerPort: 80
