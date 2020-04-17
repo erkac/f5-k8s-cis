@@ -28,7 +28,9 @@ K8s Master
 7. Recreate the same deployment using YAML (/f5-cis/1-f5demo-app.yml). Click the + Create button. Verify the Create from Text Input tab is selected. Paste the following YAML and then click Upload
 
 ### CLI
-#### Exp
+
+#### Expose Service via ClusterIP
+
 1. Create/expose a service with the following command
 
         $ kubectl expose deployment/exercise1 --name exercise1-svc --port=80
@@ -41,6 +43,7 @@ K8s Master
         $ kubectl exec -it [name of pod] -- nslookup exercise1-svc
 
 #### Expose Service via NodePort
+
 1. Create a new deployment (so we can more easily differentiate our test applications):
 
         $ kubectl create -f ./f5-cis/2-exercise2.yml
@@ -54,7 +57,9 @@ K8s Master
         $ kubectl get service exercise2-svc
 
 #### Deploy F5 Container Ingress Services
+
 1. Under _Systems -> Users -> Partitions_ create partition _kubernetes_
+
 2. Create a Secret for BIG-IP. The user credentials for the BIG-IP need to be stored in a Kubernetes secret. Run the commands in the following section from the bash prompt on kmaster.
 
         $ kubectl create secret generic bigip-login --namespace kube-system --from-literal=username=admin --from-literal=password=admin
