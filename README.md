@@ -6,7 +6,10 @@ Based on the UDF Demo -> ASE CC K8s Exercise
 ## Gernal Notes
 K8s Master
 
-        systemctl status kubelet
+```shell
+$ systemctl status kubelet
+$ kubectl get node
+```
 
 ## Demo
 
@@ -33,14 +36,18 @@ K8s Master
 
 1. Create/expose a service with the following command
 
-        $ kubectl expose deployment/exercise1 --name exercise1-svc --port=80
+```shell
+kubectl expose deployment/exercise1 --name exercise1-svc --port=80
+```
 
 2. Investigate the service you just created in the dashboard. Under the services section click on the “exercise1-svc” name. By default Kubernetes has created a service of serviceType _ClusterIP_
 
 3. Verify the DNS entry that kubedns created for your service. When pods are created they are able to resolve against kubedns by default.
 
-        $ kubectl get pod
-        $ kubectl exec -it [name of pod] -- nslookup exercise1-svc
+```shell
+$ kubectl get pod
+$ kubectl exec -it [name of pod] -- nslookup exercise1-svc
+```
 
 #### Expose Service via NodePort
 
@@ -62,25 +69,35 @@ K8s Master
 
 2. Create a Secret for BIG-IP. The user credentials for the BIG-IP need to be stored in a Kubernetes secret. Run the commands in the following section from the bash prompt on kmaster.
 
-        $ kubectl create secret generic bigip-login --namespace kube-system --from-literal=username=admin --from-literal=password=admin
+```shell
+$ kubectl create secret generic bigip-login --namespace kube-system --from-literal=username=admin --from-literal=password=admin
+```
 
 3. Service Account. You will also need a Service Account that the controller will run as.
 
-        $ kubectl apply -f ./f5-cis/cis-sa.yaml -n kube-system
+```shell
+$ kubectl apply -f ./f5-cis/cis-sa.yaml -n kube-system
+```
 
 4. RBAC Permissions. Grant appropriate permissions to the Service Account.
 
-        $ kubectl apply -f ./f5-cis/cis-rbac.yaml -n kube-system
+```shell
+$ kubectl apply -f ./f5-cis/cis-rbac.yaml -n kube-system
+```
 
 5. Deploy the Controller. The following command will deploy the controller.
 
-        $ kubectl apply -f ./f5-cis/f5-cc-deployment.yaml -n kube-system
+```shell
+$ kubectl apply -f ./f5-cis/f5-cc-deployment.yaml -n kube-system
+```
 
 6. You can verify the controller is running from the dashboard or using kubectl from bash on kmaster. Note this pod is running in the “kube-system” namespace (include -n kube-system if using kubectl).
 
 7. Create a new Deployment/Application
 
-        $ kubectl create -f ./f5-cis/3-exercise3.yml
+```shell
+$ kubectl create -f ./f5-cis/3-exercise3.yml
+```
 
 8. Create a Service
 
