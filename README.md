@@ -37,7 +37,7 @@ $ kubectl get node
 1. Create/expose a service with the following command
 
 ```shell
-kubectl expose deployment/exercise1 --name exercise1-svc --port=80
+$ kubectl expose deployment/exercise1 --name exercise1-svc --port=80
 ```
 
 2. Investigate the service you just created in the dashboard. Under the services section click on the “exercise1-svc” name. By default Kubernetes has created a service of serviceType _ClusterIP_
@@ -53,15 +53,21 @@ $ kubectl exec -it [name of pod] -- nslookup exercise1-svc
 
 1. Create a new deployment (so we can more easily differentiate our test applications):
 
-        $ kubectl create -f ./f5-cis/2-exercise2.yml
+```shell
+$ kubectl create -f ./f5-cis/2-exercise2.yml
+```
 
 2. Create a new service using _NodePort_
 
-        $ kubectl expose deployment/exercise2 --name exercise2-svc --type=NodePort
+```shell
+$ kubectl expose deployment/exercise2 --name exercise2-svc --type=NodePort
+```
 
 3. Determine what port(s) the service is exposed on:
-    
-        $ kubectl get service exercise2-svc
+
+```shell    
+$ kubectl get service exercise2-svc
+```
 
 #### Deploy F5 Container Ingress Services
 
@@ -101,27 +107,36 @@ $ kubectl create -f ./f5-cis/3-exercise3.yml
 
 8. Create a Service
 
-        $ kubectl create -f ./f5-cis/3-exercise3-svc.yml
+```shell
+$ kubectl create -f ./f5-cis/3-exercise3-svc.yml
+```
 
 9. Basic L4 Services
 
-        $ kubectl create -f ./f5-cis/4-as3-basic-configmap.yaml
+```shell
+$ kubectl create -f ./f5-cis/4-as3-basic-configmap.yaml
+```
 
 10. Deploying a WAF Policy:
-
 - show that there is preconfigured security policy in ASM, which we are reffering to
 
-        $ kubectl apply -f ./f5-cis/5-waf-configmap.yaml
+```shell
+$ kubectl apply -f ./f5-cis/5-waf-configmap.yaml
+```
 
 11. Execute the following command from kmaster:
 
-        $ curl http://app.example.com/ -v -H "X-Hacker: cat /etc/paswd"
+```shell
+$ curl http://app.example.com/ -v -H "X-Hacker: cat /etc/paswd"
+```
 
 12. On the BIG-IP go to Security -> Event Logs and you should see the blocked request
 
 13. Scale the deployment
-
-        $ kubectl apply -f ./f5-cis/6-scale.yml
-
 - change the _replicas_ parameter to 6 and redeploy
 - check the _LTM_ Pool chnages after each modification and deployment
+
+```shell
+$ kubectl apply -f ./f5-cis/6-scale.yml
+```
+
