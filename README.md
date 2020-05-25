@@ -7,6 +7,7 @@ Based on the UDF Demo -> ASE CC K8s Exercise
 K8s Master
 
 ```shell
+# Check the system status
 $ systemctl status kubelet
 $ kubectl get node
 ```
