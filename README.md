@@ -1,5 +1,8 @@
 # F5 with K8s Demo
 
+## Useful URLs
+- [CIS Using ClusterIP Mode](https://clouddocs.f5.com/training/community/containers/html/class1/module2/module2.html)
+
 ## Demo Notes
 Based on the UDF Demo -> ASE CC K8s Exercise
 
