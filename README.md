@@ -106,6 +106,10 @@ $ kubectl apply -f ./f5-cis/f5-cc-deployment.yaml -n kube-system
 
 6. You can verify the controller is running from the dashboard or using kubectl from bash on kmaster. Note this pod is running in the “kube-system” namespace (include -n kube-system if using kubectl).
 
+```shell
+$ kubectl -n kube-system get pods
+```
+
 7. Create a new Deployment/Application
 
 ```shell
