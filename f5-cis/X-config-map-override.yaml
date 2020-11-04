@@ -1,0 +1,21 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ExApp3
+  namespace: default
+data:
+  template: |
+    {
+      "declaration": {
+        "AS3": {
+          "ExApp3": {
+            "ingress": {
+              "virtualAddresses": [
+                "10.1.10.10%1"
+              ]
+            }
+          }
+        }
+      }
+    }

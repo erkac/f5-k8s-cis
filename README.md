@@ -2,6 +2,9 @@
 
 ## Useful URLs
 - [CIS Using ClusterIP Mode](https://clouddocs.f5.com/training/community/containers/html/class1/module2/module2.html)
+- [CIS and AS3 Extension integration](https://clouddocs.f5.com/containers/v2/kubernetes/kctlr-k8s-as3.html)
+- [Routes](https://clouddocs.f5.com/containers/latest/userguide/routes.html)
+- [Install F5 Container ingress services](https://devcentral.f5.com/s/articles/CIS-and-Kubernetes-Part-2-Install-F5-Container-ingress-services)
 
 ## Demo Notes
 Based on the UDF Demo -> ASE CC K8s Exercise
