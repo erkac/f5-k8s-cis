@@ -1,2 +1,21 @@
-cis-ingress-only
-cis-ingress-only-working
+
+# General
+.vscode
+.env
+.DS_Store
+
+# Terraform
+.terraform
+*.tfstate*
+*.tfvars
+*.tfplan
+!*-example.tfvars
+
+# Configs
+config.env.sh
+00_environment.sh
+do-vlab-full.json
+
+# Ansible
+hosts
+

@@ -129,7 +129,7 @@ $ kubectl create -f ./f5-cis/4-as3-basic-configmap.yaml
 ```
 
 10. Deploying a WAF Policy:
-- show that there is preconfigured security policy in ASM, which we are reffering to
+- show that there is preconfigured security policy in ASM, which we are referring to
 
 ```shell
 $ kubectl apply -f ./f5-cis/5-waf-configmap.yaml
