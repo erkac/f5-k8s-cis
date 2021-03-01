@@ -9,16 +9,13 @@
 ## Demo Notes
 Based on the UDF Demo -> ASE CC K8s Exercise
 
-## Gernal Notes
-K8s Master
-
 ```shell
 # Check the system status
 $ systemctl status kubelet
 $ kubectl get node
 ```
 
-## Troubleshooting
+## CIS Troubleshooting
 - [CIS documentation](https://clouddocs.f5.com/containers/v2/troubleshooting/kubernetes.html)
 
 1. Find the name of the k8s-bigip-ctlr Pod.

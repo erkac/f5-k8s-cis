@@ -95,6 +95,14 @@ spec:
       containers:
       - name: f5-bigip-ctlr
         image: "f5networks/k8s-bigip-ctlr:1.9.0"
+        # resources added by me not sure if it is correct
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "750m"
         volumeMounts:
         - name: bigip-creds
           mountPath: "/tmp/creds"
