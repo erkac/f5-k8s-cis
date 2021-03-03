@@ -60,7 +60,7 @@ $ kubectl get node
     - Look at the deployments menu item again. Notice there is now a deployment.
     - Click on the three dots to the right of your deployment. From the flyout menu select View/edit YAML.
 6. Delete the existing deployment by choosing Delete from the previous flyout menu
-7. Recreate the same deployment using YAML (/f5-cis/1-f5demo-app.yml). Click the + Create button. Verify the Create from Text Input tab is selected. Paste the following YAML and then click Upload
+7. Recreate the same deployment using YAML (./f5-cis/1-exercise1.yml). Click the + Create button. Verify the Create from Text Input tab is selected. Paste the following YAML and then click Upload
 
 ### CLI
 
