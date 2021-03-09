@@ -51,9 +51,9 @@ $ kubectl get node
 2. Navigate to the deployments menu option
 3. Click the _+Create_ button in the upper right hand corner of the dashboard
 4. Click on the tab labelled Create an App. Fill out the fields in the following manner:
-    - App Name:	exercise1
-    - Container Image: f5devcentral/f5-demo-httpd
-    - Number of Pods: 2
+    - App Name: *exercise1*
+    - Container Image: *f5devcentral/f5-demo-httpd*
+    - Number of Pods: *2*
     - Service: None
 5. Using the dashboard investigate the deployment you just made
     - Look at the pods menu item. Which nodes were the pods deployed on?
@@ -137,13 +137,13 @@ $ kubectl get node
 
 9. Basic L4 Services
     ```shell
-    $ kubectl create -f ./f5-cis/4-as3-basic-configmap.yaml
+    $ kubectl create -f ./f5-cis/4-as3-basic-configmap.yml
     ```
 
 10. Deploying a WAF Policy:
 - show that there is preconfigured security policy in ASM, which we are referring to
     ```shell
-    $ kubectl apply -f ./f5-cis/5-waf-configmap.yaml
+    $ kubectl apply -f ./f5-cis/5-waf-configmap.yml
     ```
 
 11. Execute the following command from kmaster:
